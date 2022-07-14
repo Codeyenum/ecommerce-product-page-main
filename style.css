@@ -75,7 +75,7 @@ header {
     margin: 0 -1.5rem;
     position: relative;
     overflow-y: scroll;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .image_container img {
