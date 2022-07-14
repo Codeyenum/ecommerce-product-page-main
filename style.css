@@ -78,8 +78,8 @@ header {
 }
 
 .image_container img {
-    height: 37.5vh;
-    max-height: 55vh;
+    /* height: 37.5vh; */
+    max-height: 60vh;
     width: 100%;
     object-fit: cover;
 }
@@ -108,7 +108,7 @@ header {
 .image_container button:hover,
 .image_container button:active,
 .image_container button:focus {
-    color: var(--Orange);
+    color: rgba(233, 78, 78, 0.877);
 }
 
 .prev_btn {
