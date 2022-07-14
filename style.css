@@ -88,6 +88,7 @@ header {
     background-color: var(--White);
     border: none;
     border-radius: 50%;
+    color: var(--Black);
     cursor: pointer;
 
     display: flex;
