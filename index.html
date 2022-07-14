@@ -26,19 +26,34 @@
 
 <body>
     <header>
-        <nav>
+        <img src="./images/icon-menu.svg" alt="menu">
+        <nav class="mobile_nav hide">
             Collections
             Men
             Women
             About
             Contact
         </nav>
+        <img class="logo_img" src="./images/logo.svg" alt="logo">
+        <div class="cart_div">
+            <!-- <i class="fa-solid fa-cart-shopping"></i> -->
+            <img src="./images/icon-cart.svg" alt="">
+            <img src="./images/image-avatar.png" alt="customer avatar">
+        </div>
     </header>
-    <main>
-        <article class="store_component">
-            <div class="image_container">
-                <img src="./images/image-product-1.jpg" alt="">
+    <main>        
+        <div class="image_container">
+            <img src="./images/image-product-1.jpg" alt="">
+            <button class="prev_btn"><i class="fa-solid fa-angle-left"></i></button>
+            <button class="next_btn"><i class="fa-solid fa-angle-right"></i></button>
+            <div class="thumbnails">
+                <img src="./images/image-product-1-thumbnail.jpg" alt="">
+                <img src="./images/image-product-2-thumbnail.jpg" alt="">
+                <img src="./images/image-product-3-thumbnail.jpg" alt="">
+                <img src="./images/image-product-4-thumbnail.jpg" alt="">
             </div>
+        </div>
+        <article class="store_component">
             <h1>Sneaker Company</h1>
             <h2>Fall Limited Edition Sneakers</h2>
             <p>
@@ -50,15 +65,17 @@
                 <p>50%</p>
                 <s>$250.00</s>
             </div>
-            <div class="quantity_container">
-                <button><img src="./images/icon-minus.svg" alt="minus"></button>
-                <p>0</p>
-                <button><img src="./images/icon-plus.svg" alt="plus"></button>
+            <div class="order">
+                <div class="quantity_container">
+                    <button><img src="./images/icon-minus.svg" alt="minus"></button>
+                    <p>0</p>
+                    <button><img src="./images/icon-plus.svg" alt="plus"></button>
+                </div>
+                <button class="cart_btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add to cart
+                </button>
             </div>
-            <button class="cart_btn">
-                <i class="fa-solid fa-cart-shopping"></i>
-                Add to cart
-            </button>
         </article>
     </main>
     <div class="attribution">
