@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    /* ### Primary */
+
+--Orange: hsl(26, 100%, 55%);
+--paleOrange: hsl(25, 100%, 94%);
+
+/* ### Neutral */
+
+--veryDarkBlue: hsl(220, 13%, 13%);
+--darkGrayishBlue: hsl(219, 9%, 45%);
+--grayishBlue: hsl(220, 14%, 75%);
+--lightGrayishBlue: hsl(223, 64%, 98%);
+--White: hsl(0, 0%, 100%);
+--Black : hsl(0, 0%, 0%) ; /*(with 75% opacity for lightbox background)*/
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    padding: 0 1.5rem;
+}
+
+/* main {
+    display: flex;
+    flex-direction: column;
+} */
+
+.image_container {
+    max-width: 100vw;
+    margin: 0 -1.5rem;
+}
+
+.image_container img {
+    height: 37.5vh;
+    max-height: 55vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.store_component h1 {
+    color: var(--Orange);
+    font-size: .85rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    text-transform: uppercase;
+}
+
+.store_component h2 {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+}
+
+.store_component h2 + p {
+    color: var(--darkGrayishBlue);
+    font-size: 1rem;
+    line-height: 1.5rem;    
+    margin: 1.25rem 0;
+}
+
+.price_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.price_container strong {
+    font-size: 1.75rem;
+}
+
+.price_container p {
+    background-color: var(--paleOrange);
+    border-radius: 7px;
+    color: var(--Orange);
+    font-weight: 700;
+    margin-right: 25%;
+    padding: 3px 6px;
+}
+
+.price_container s {
+    color: var(--grayishBlue);
+    font-weight: 700;
+}
+
+.quantity_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--lightGrayishBlue);
+    border-radius: 10px;
+    padding: 1.25rem;
+}
+
+.quantity_container p {
+    font-weight: 700;
+}
+
+.quantity_container button {
+    display: flex;
+    justify-content: center;
+
+    border: none;
+    cursor: pointer;
+}
+
+.cart_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    
+    background-color: var(--Orange);
+    border: none;
+    border-radius: 10px;    
+    color: var(--White);    
+    cursor: pointer;
+    
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+
+    margin: 1rem 0;
+    padding: 1.2rem;
+    width: 100%;
+}
+
