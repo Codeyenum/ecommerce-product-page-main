@@ -26,7 +26,7 @@
 
 <body>
     <header>
-        <img src="./images/icon-menu.svg" alt="menu">
+        <img class="menu_btn" src="./images/icon-menu.svg" alt="menu">
         <nav class="mobile_nav hide">
             Collections
             Men
@@ -35,9 +35,16 @@
             Contact
         </nav>
         <img class="logo_img" src="./images/logo.svg" alt="logo">
+        <nav class="desktop_nav">
+            <a href="">Collections</a>
+            <a href="">Men</a>
+            <a href="">Women</a>
+            <a href="">About</a>
+            <a href="">Contact</a>    
+        </nav>
         <div class="cart_div">
-            <!-- <i class="fa-solid fa-cart-shopping"></i> -->
-            <img class="cart_icon" src="./images/icon-cart.svg" alt="">
+            <i class="fa-solid fa-cart-shopping cart_icon"></i>
+            <!-- <img class="cart_icon" src="./images/icon-cart.svg" alt=""> -->
             <img src="./images/image-avatar.png" alt="customer avatar">
         </div>
     </header>
@@ -47,10 +54,18 @@
             <button class="prev_btn"><i class="fa-solid fa-angle-left"></i></button>
             <button class="next_btn"><i class="fa-solid fa-angle-right"></i></button>
             <div class="thumbnails">
-                <img src="./images/image-product-1-thumbnail.jpg" alt="">
-                <img src="./images/image-product-2-thumbnail.jpg" alt="">
-                <img src="./images/image-product-3-thumbnail.jpg" alt="">
-                <img src="./images/image-product-4-thumbnail.jpg" alt="">
+                <div class="thumbnail ">
+                    <img src="./images/image-product-1-thumbnail.jpg" alt="">
+                </div>
+                <div class="thumbnail">
+                    <img src="./images/image-product-2-thumbnail.jpg" alt="">
+                </div>
+                <div class="thumbnail current_thumbnail">
+                    <img src="./images/image-product-3-thumbnail.jpg" alt="">
+                </div>
+                <div class="thumbnail">
+                    <img src="./images/image-product-4-thumbnail.jpg" alt="">
+                </div>
             </div>
             <div class="cart_card">
                 <div class="title_container">
