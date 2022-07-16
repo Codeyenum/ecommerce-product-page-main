@@ -28,37 +28,30 @@ nextBtn.addEventListener("click", () => {
     let currentProduct = document.querySelector(".current_slide");      
     let nextProduct = currentProduct.nextElementSibling;
     let firstProduct = currentProduct.parentElement.children[0];
-
-    currentProduct.classList.add("hide");    
-    currentProduct.classList.remove("current_slide");    
-    nextProduct.classList.remove("hide");
-    nextProduct.classList.add("current_slide");    
     
-    if (nextProduct === currentProduct.parentElement.children[4] ) {
-        currentProduct.classList.add("hide");    
+    if (nextProduct != currentProduct.parentElement.children[4] ) {        
+        currentProduct.classList.add("hide"); 
+        currentProduct.classList.add("hide-left");       
         currentProduct.classList.remove("current_slide");    
-        firstProduct.classList.remove("hide");
-        firstProduct.classList.add("current_slide");
+        nextProduct.classList.remove("hide");
+        nextProduct.classList.remove("hide-left");  
+        nextProduct.classList.add("current_slide");
     }
 })
 
-// prevBtn.addEventListener("click", () => {  
-//     let currentProduct = document.querySelector(".current_slide");      
-//     let prevProduct = currentProduct.previousElementSibling;
-//     let firstProduct = currentProduct.parentElement.children[0];
-
-//     currentProduct.classList.add("hide");    
-//     currentProduct.classList.remove("current_slide");    
-//     prevProduct.classList.remove("hide");
-//     prevProduct.classList.add("current_slide");    
+prevBtn.addEventListener("click", () => {  
+    let currentProduct = document.querySelector(".current_slide");      
+    let prevProduct = currentProduct.previousElementSibling;    
     
-//     if (nextProduct === currentProduct.parentElement.children[4] ) {
-//         currentProduct.classList.add("hide");    
-//         currentProduct.classList.remove("current_slide");    
-//         firstProduct.classList.remove("hide");
-//         firstProduct.classList.add("current_slide");
-//     }
-// })
+    if (prevProduct !== null) {
+        currentProduct.classList.add("hide");  
+        currentProduct.classList.add("hide-left");    
+        currentProduct.classList.remove("current_slide");    
+        prevProduct.classList.remove("hide");
+        prevProduct.classList.remove("hide-left");  
+        prevProduct.classList.add("current_slide");
+    }
+})
 
 
 let add = document.querySelector(".plus");

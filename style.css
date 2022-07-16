@@ -113,15 +113,17 @@ header {
     object-fit: cover;    
 }
 
-.product.hide-left {  
+.product.hide {  
     display: block;  
     position: absolute;
-    transform: translateX(100%);
+    height: 20%;
+    transform: translateX(-40%);
     transition: 1s ease-in-out;
 }
 
-.product.hide-right {  
-    display: block;  
+.product.hide-left {  
+    display: block; 
+    height: 50%; 
     position: absolute;
     transform: translateX(-100%);
     transition: 1s ease-in-out;
