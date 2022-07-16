@@ -43,7 +43,9 @@
             <a href="">Contact</a>    
         </nav>
         <div class="cart_div">
-            <i class="fa-solid fa-cart-shopping cart_icon"></i>
+            <i class="fa-solid fa-cart-shopping cart_icon">
+                <small class="hide">0</small>
+            </i>
             <!-- <img class="cart_icon" src="./images/icon-cart.svg" alt=""> -->
             <img src="./images/image-avatar.png" alt="customer avatar">
         </div>
@@ -75,16 +77,16 @@
                     <h2>Card</h2>  
                 </div>
                 <div class="order-details">
-                    <div class="cart_content">
+                    <div class="cart_content hide">
                         <img class="product_thumbnail" src="./images/image-product-1-thumbnail.jpg" alt="">
-                        <div class="product-details">
+                        <div class="order-summary">
                             <p>Autumn Limited Edition...</p>
-                            <p>kwbvwvkjvnwkj</p>
+                            <p class="sum-total"></p>
                         </div>
                         <img class="delete_icon" src="./images/icon-delete.svg" alt="">                         
                     </div>                
-                    <button class="checkout_btn">Checkout</button>
-                    <p class="hide">Your cart is empty</p>
+                    <button class="checkout_btn hide">Checkout</button>
+                    <p class="">Your cart is empty</p>
                 </div>                                                 
             </div>
         </div>

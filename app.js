@@ -1,5 +1,7 @@
 let cartBtn = document.querySelector(".cart_icon");
 let cartCard = document.querySelector(".cart_card");
+let cartItems = cartBtn.children[0];
+let sumTotal = document.querySelector(".sum-total");
 
 cartBtn.addEventListener("click", () => {
     cartCard.classList.toggle("hide");
@@ -27,16 +29,44 @@ let quantity = 0;
 add.addEventListener("click", () => {
     quantity ++;    
     quantityBox.children[1].innerText = quantity;
-    // return quantity;    
+    cartItems.innerText = quantity;    
 })
 subtract.addEventListener("click", () => {
     if (quantity > 0) {
         quantity --;
-    }    
+    }
     quantityBox.children[1].innerText = quantity;
-    // return quantity;    
+    cartItems.innerText = quantity; 
 })
 
+let addToCart = document.querySelector(".cart_btn");
+
+let checkoutBtn = document.querySelector(".checkout_btn");
+let cartContent = document.querySelector(".cart_content");
+let emptyCart = document.querySelector(".order-details > p");
+
+addToCart.addEventListener("click", () => {
+    sumTotal.innerHTML = `$125.00 x ${quantity} <strong>$${125.00 * quantity}.00</strong>`
+    if (quantity > 0) {
+        cartItems.classList.toggle("hide");
+    }   
+    cartContent.classList.toggle("hide");         
+    emptyCart.classList.toggle("hide") 
+    checkoutBtn.classList.toggle("hide");
+})
+
+checkoutBtn.addEventListener("click", () => {
+    quantityBox.children[1].innerText = 0;
+    cartContent.classList.toggle("hide");        
+    emptyCart.classList.toggle("hide")    
+    checkoutBtn.classList.toggle("hide");
+    quantity = 0;
+    cartItems.classList.toggle("hide");   
+})
+
+cartCard.addEventListener("mouseleave", () => {
+    cartCard.classList.toggle("hide");
+})
 
 
 
