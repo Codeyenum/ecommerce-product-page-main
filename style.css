@@ -276,13 +276,14 @@ header {
 }
 
 .quantity_container {
+    /* border: 1px solid var(--grayishBlue); */
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     background-color: var(--lightGrayishBlue);
     border-radius: 10px;
-    padding: 1.25rem;
+    height: 60px;    
 }
 
 .quantity_container p {
@@ -292,10 +293,17 @@ header {
 .quantity_container button {
     display: flex;
     justify-content: center;
+    align-items: center;
 
     background-color: transparent;
     border: none;
     cursor: pointer;
+    height: 100%;
+    width: 3rem;
+}
+
+.quantity_container button:hover {
+    opacity: .5;
 }
 
 .cart_btn {
@@ -396,8 +404,10 @@ header {
     }
         
     .cart_card {
+        box-shadow: 1px 10px 20px hsl(220, 14%, 75%);
         position: absolute;  
-        top: 35%;
+        top: 32%;
+        left: 82.5%;
         width: 360px;    
         max-height: 275px;    
     }
@@ -450,8 +460,7 @@ header {
         justify-content: space-between;
     }
 
-    .quantity_container {
-        padding: 1rem;
+    .quantity_container {        
         width: 30%;
     }
         

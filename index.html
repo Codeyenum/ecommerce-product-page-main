@@ -51,23 +51,26 @@
     <main>        
         <div class="product_container">
             <img class="product" src="./images/image-product-1.jpg" alt="">
+            <img class="product hide" src="./images/image-product-2.jpg" alt="">
+            <img class="product hide" src="./images/image-product-3.jpg" alt="">
+            <img class="product hide" src="./images/image-product-4.jpg" alt="">
             <button class="prev_btn"><i class="fa-solid fa-angle-left"></i></button>
             <button class="next_btn"><i class="fa-solid fa-angle-right"></i></button>
             <div class="thumbnails">
-                <div class="thumbnail ">
+                <div class="thumbnail current_thumbnail">
                     <img src="./images/image-product-1-thumbnail.jpg" alt="">
                 </div>
                 <div class="thumbnail">
                     <img src="./images/image-product-2-thumbnail.jpg" alt="">
                 </div>
-                <div class="thumbnail current_thumbnail">
+                <div class="thumbnail">
                     <img src="./images/image-product-3-thumbnail.jpg" alt="">
                 </div>
                 <div class="thumbnail">
                     <img src="./images/image-product-4-thumbnail.jpg" alt="">
                 </div>
             </div>
-            <div class="cart_card">
+            <div class="cart_card hide">
                 <div class="title_container">
                     <h2>Card</h2>  
                 </div>
@@ -99,9 +102,9 @@
             </div>
             <div class="order">
                 <div class="quantity_container">
-                    <button><img src="./images/icon-minus.svg" alt="minus"></button>
+                    <button class="minus"><img src="./images/icon-minus.svg" alt="minus"></button>
                     <p>0</p>
-                    <button><img src="./images/icon-plus.svg" alt="plus"></button>
+                    <button class="plus"><img src="./images/icon-plus.svg" alt="plus"></button>
                 </div>
                 <button class="cart_btn">
                     <i class="fa-solid fa-cart-shopping"></i>
@@ -114,6 +117,7 @@
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
         Coded by <a href="#">Your Name Here</a>.
     </div>
+    <script src="app.js"></script>
 </body>
 
 </html>
