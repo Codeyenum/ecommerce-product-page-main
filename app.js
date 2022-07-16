@@ -26,31 +26,25 @@ let prevBtn = document.querySelector(".prev_btn");
 
 nextBtn.addEventListener("click", () => {  
     let currentProduct = document.querySelector(".current_slide");      
-    let nextProduct = currentProduct.nextElementSibling;
-    let firstProduct = currentProduct.parentElement.children[0];
-    
-    if (nextProduct != currentProduct.parentElement.children[4] ) {        
-        currentProduct.classList.add("hide"); 
-        currentProduct.classList.add("hide-left");       
+    let nextProduct = currentProduct.nextElementSibling;    
+
+    if (nextProduct != currentProduct.parentElement.children[4] ) {                
+        currentProduct.classList.add("hide");               
         currentProduct.classList.remove("current_slide");    
-        nextProduct.classList.remove("hide");
-        nextProduct.classList.remove("hide-left");  
+        nextProduct.classList.remove("hide");        
         nextProduct.classList.add("current_slide");
     }
+
 })
 
 prevBtn.addEventListener("click", () => {  
     let currentProduct = document.querySelector(".current_slide");      
-    let prevProduct = currentProduct.previousElementSibling;    
+    let prevProduct = currentProduct.previousElementSibling;   
     
-    if (prevProduct !== null) {
-        currentProduct.classList.add("hide");  
-        currentProduct.classList.add("hide-left");    
-        currentProduct.classList.remove("current_slide");    
-        prevProduct.classList.remove("hide");
-        prevProduct.classList.remove("hide-left");  
-        prevProduct.classList.add("current_slide");
-    }
+    if (prevProduct !== null) {                 
+        currentProduct.classList.remove("current_slide");                    
+        prevProduct.classList.add("current_slide");                
+    } 
 })
 
 

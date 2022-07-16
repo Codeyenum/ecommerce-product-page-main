@@ -101,7 +101,8 @@ header {
 
 .product_container {
     max-width: 100vw;
-    max-height: 50vh;
+    height: 48.5vh;
+    max-height: 360px;
     margin: 0 -1.5rem;
     position: relative;    
     overflow: hidden;    
@@ -117,22 +118,24 @@ header {
     display: block;  
     position: absolute;
     height: 100%;
-    transform: translateX(-100%);
+    left: -100%;
+    /* transform: translateX(-100%); */
     transition: 1s ease-in-out;
 }
 
 .product.hide-left {  
     display: block; 
-    height: 100%; 
+    left: -100%; 
     position: absolute;
-    transform: translateX(100%);
+    /* transform: translateX(100%); */
     transition: 1s ease-in-out;
 }
 
 .product.current_slide {    
     height: 100%;
-    transform: translateX(0%);
-    transition: .7s ease-in-out;
+    left: 0;
+    /* transform: translateX(0%); */
+    transition: 1s ease-in-out;
 }
 
 .prev_btn, .next_btn {
@@ -432,6 +435,7 @@ header {
 
     .product_container {
         margin: 0;
+        height: unset;
         max-height: 100%;
         position: static;
         width: 40%;
