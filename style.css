@@ -117,7 +117,7 @@ header {
     display: block;  
     position: absolute;
     height: 20%;
-    transform: translateX(-40%);
+    transform: translateX(100%);
     transition: 1s ease-in-out;
 }
 
@@ -132,7 +132,7 @@ header {
 .product.current_slide {    
     height: 100%;
     transform: translateX(0%);
-    transition: 1s ease-in-out;
+    transition: .7s ease-in-out;
 }
 
 .prev_btn, .next_btn {
