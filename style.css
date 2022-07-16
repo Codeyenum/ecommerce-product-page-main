@@ -117,25 +117,13 @@ header {
 .product.hide {  
     display: block;  
     position: absolute;
-    height: 100%;
     left: -100%;
-    /* transform: translateX(-100%); */
-    transition: 1s ease-in-out;
-}
-
-.product.hide-left {  
-    display: block; 
-    left: -100%; 
-    position: absolute;
-    /* transform: translateX(100%); */
-    transition: 1s ease-in-out;
+    transition: .75s ease-out;
 }
 
 .product.current_slide {    
-    height: 100%;
-    left: 0;
-    /* transform: translateX(0%); */
-    transition: 1s ease-in-out;
+    left: 0;    
+    transition: .75s ease-out;
 }
 
 .prev_btn, .next_btn {
