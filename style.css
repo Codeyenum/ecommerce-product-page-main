@@ -113,6 +113,26 @@ header {
     object-fit: cover;    
 }
 
+.product.hide-left {  
+    display: block;  
+    position: absolute;
+    transform: translateX(100%);
+    transition: 1s ease-in-out;
+}
+
+.product.hide-right {  
+    display: block;  
+    position: absolute;
+    transform: translateX(-100%);
+    transition: 1s ease-in-out;
+}
+
+.product.current_slide {    
+    height: 100%;
+    transform: translateX(0%);
+    transition: 1s ease-in-out;
+}
+
 .prev_btn, .next_btn {
     background-color: var(--White);
     border: none;
@@ -220,6 +240,7 @@ header {
 }
 
 .delete_icon {
+    cursor: pointer;
     height: 16px;
     width: 14px;
 }
@@ -312,6 +333,7 @@ header {
 
     background-color: transparent;
     border: none;
+    border-radius: 10px 0 0 10px;
     cursor: pointer;
     height: 100%;
     width: 3rem;

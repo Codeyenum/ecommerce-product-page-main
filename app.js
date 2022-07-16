@@ -21,6 +21,46 @@ for (let thumbnail of thumbnails) {
     })
 }
 
+let nextBtn = document.querySelector(".next_btn");
+let prevBtn = document.querySelector(".prev_btn");
+
+nextBtn.addEventListener("click", () => {  
+    let currentProduct = document.querySelector(".current_slide");      
+    let nextProduct = currentProduct.nextElementSibling;
+    let firstProduct = currentProduct.parentElement.children[0];
+
+    currentProduct.classList.add("hide");    
+    currentProduct.classList.remove("current_slide");    
+    nextProduct.classList.remove("hide");
+    nextProduct.classList.add("current_slide");    
+    
+    if (nextProduct === currentProduct.parentElement.children[4] ) {
+        currentProduct.classList.add("hide");    
+        currentProduct.classList.remove("current_slide");    
+        firstProduct.classList.remove("hide");
+        firstProduct.classList.add("current_slide");
+    }
+})
+
+// prevBtn.addEventListener("click", () => {  
+//     let currentProduct = document.querySelector(".current_slide");      
+//     let prevProduct = currentProduct.previousElementSibling;
+//     let firstProduct = currentProduct.parentElement.children[0];
+
+//     currentProduct.classList.add("hide");    
+//     currentProduct.classList.remove("current_slide");    
+//     prevProduct.classList.remove("hide");
+//     prevProduct.classList.add("current_slide");    
+    
+//     if (nextProduct === currentProduct.parentElement.children[4] ) {
+//         currentProduct.classList.add("hide");    
+//         currentProduct.classList.remove("current_slide");    
+//         firstProduct.classList.remove("hide");
+//         firstProduct.classList.add("current_slide");
+//     }
+// })
+
+
 let add = document.querySelector(".plus");
 let subtract = document.querySelector(".minus");
 let quantityBox = document.querySelector(".quantity_container");
@@ -43,7 +83,8 @@ let addToCart = document.querySelector(".cart_btn");
 
 let checkoutBtn = document.querySelector(".checkout_btn");
 let cartContent = document.querySelector(".cart_content");
-let emptyCart = document.querySelector(".order-details > p");
+let emptyCartText = document.querySelector(".order-details > p");
+let emptyCartIcons = document.querySelectorAll(".empty-cart");
 
 addToCart.addEventListener("click", () => {
     sumTotal.innerHTML = `$125.00 x ${quantity} <strong>$${125.00 * quantity}.00</strong>`
@@ -51,18 +92,29 @@ addToCart.addEventListener("click", () => {
         cartItems.classList.toggle("hide");
     }   
     cartContent.classList.toggle("hide");         
-    emptyCart.classList.toggle("hide") 
+    emptyCartText.classList.toggle("hide") 
     checkoutBtn.classList.toggle("hide");
 })
 
-checkoutBtn.addEventListener("click", () => {
-    quantityBox.children[1].innerText = 0;
-    cartContent.classList.toggle("hide");        
-    emptyCart.classList.toggle("hide")    
-    checkoutBtn.classList.toggle("hide");
-    quantity = 0;
-    cartItems.classList.toggle("hide");   
-})
+for (let emptyIcon of emptyCartIcons) {
+    emptyIcon.addEventListener("click", () => {
+        quantityBox.children[1].innerText = 0;
+        cartContent.classList.toggle("hide");        
+        emptyCartText.classList.toggle("hide")    
+        checkoutBtn.classList.toggle("hide");
+        quantity = 0;
+        cartItems.classList.toggle("hide");   
+    })
+}
+
+// deleteBtn.addEventListener("click", () => {
+//     quantityBox.children[1].innerText = 0;
+//     cartContent.classList.toggle("hide");        
+//     emptyCartText.classList.toggle("hide")    
+//     checkoutBtn.classList.toggle("hide");
+//     quantity = 0;
+//     cartItems.classList.toggle("hide");   
+// })
 
 cartCard.addEventListener("mouseleave", () => {
     cartCard.classList.toggle("hide");
