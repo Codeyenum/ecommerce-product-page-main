@@ -49,20 +49,18 @@ nextSlide.addEventListener("click", () => {
     let currentSlide = document.querySelector(".product_slide.current_slide");
     let nextProduct = currentSlide.nextElementSibling;
     let productContainer = currentSlide.parentElement;
-
-    console.dir(currentSlide.parentElement)
+    
     if (nextProduct != productContainer.children[5]) {
         currentSlide.classList.add("hide");
         currentSlide.classList.remove("current_slide");
         nextProduct.classList.remove("hide");
         nextProduct.classList.add("current_slide");  
         if (nextProduct.nodeName === "IMG") {
-            let currentThumbnail = nextProduct.src.charAt(43) - 1; 
+            let currentThumbnail = parseInt(nextProduct.src.charAt(43)) - 1;
             for (let slideThumbnail of slideThumbnails) {
                 slideThumbnail.classList.remove("current_slide-thumbnail");
             }      
-            slideThumbnails[`${currentThumbnail}`].classList.toggle("current_slide-thumbnail")  
-            
+            slideThumbnails[`${currentThumbnail}`].classList.toggle("current_slide-thumbnail");            
         }                    
     }
 })
@@ -78,7 +76,7 @@ prevSlide.addEventListener("click", () => {
         prevProduct.classList.add("current_slide");
         prevProduct.classList.remove("hide"); 
         if (prevProduct.nodeName === "IMG") {
-            let currentThumbnail = prevProduct.src.charAt(43) - 1; 
+            let currentThumbnail = parseInt(nextProduct.src.charAt(43)) - 1;
             for (let slideThumbnail of slideThumbnails) {
                 slideThumbnail.classList.remove("current_slide-thumbnail");
             }      
