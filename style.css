@@ -392,18 +392,23 @@ header {
 
     .desktop_nav {
         display: flex;
+        align-items: center;
+        height: 2rem;
         margin-right: 12.5vw;
     }
 
     .desktop_nav a {
+        border-bottom: 2px solid transparent;
         color: var(--darkGrayishBlue);
         font-size: .85rem;
         text-decoration: none;
-        margin: 0 1.25rem;
+        margin: 0 1.25rem;        
     }
 
     .desktop_nav a:hover {
         color: var(--veryDarkBlue);
+        border-bottom: 2px solid var(--Orange);
+        transition: 1s ease-in-out;
     }
 
     .cart_div {
@@ -657,5 +662,4 @@ header {
     .hide {
         display: none;
     }
-
 }
