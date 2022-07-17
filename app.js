@@ -44,9 +44,9 @@ closeBtn.addEventListener("click", () => {
 
 let nextSlide = document.querySelector(".next_slide");
 let prevSlide = document.querySelector(".prev_slide");
-let currentSlide = document.querySelector(".current_slide");
 
-nextSlide.addEventListener("click", () => {    
+nextSlide.addEventListener("click", () => {
+    let currentSlide = document.getElementsByClassName("current_slide");
     let nextProduct = currentSlide.nextElementSibling;
     let productContainer = currentSlide.parentElement;
 
@@ -60,12 +60,14 @@ nextSlide.addEventListener("click", () => {
             for (let slideThumbnail of slideThumbnails) {
                 slideThumbnail.classList.remove("current_slide-thumbnail");
             }      
-            slideThumbnails[`${currentThumbnail}`].classList.toggle("current_slide-thumbnail")                      
+            slideThumbnails[`${currentThumbnail}`].classList.toggle("current_slide-thumbnail")  
+            console.log(currentThumbnail)
         }                    
     }
 })
 
-prevSlide.addEventListener("click", () => {        
+prevSlide.addEventListener("click", () => {    
+    let currentSlide = document.getElementsByClassName("current_slide");
     let upperBound = document.querySelector(".close_btn");
     let prevProduct = currentSlide.previousElementSibling;        
 
