@@ -76,11 +76,11 @@ prevSlide.addEventListener("click", () => {
         prevProduct.classList.add("current_slide");
         prevProduct.classList.remove("hide"); 
         if (prevProduct.nodeName === "IMG") {
-            let currentThumbnail = parseInt(nextProduct.src.charAt(43)) - 1;
+            let currentThumbnail = parseInt(prevProduct.src.charAt(43)) - 1;
             for (let slideThumbnail of slideThumbnails) {
                 slideThumbnail.classList.remove("current_slide-thumbnail");
             }      
-            slideThumbnails[`${currentThumbnail}`].classList.toggle("current_slide-thumbnail")
+            slideThumbnails[currentThumbnail].classList.toggle("current_slide-thumbnail")            
         }
     }
 })
