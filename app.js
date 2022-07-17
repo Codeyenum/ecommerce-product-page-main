@@ -56,9 +56,8 @@ nextSlide.addEventListener("click", () => {
         nextProduct.classList.remove("hide");
         nextProduct.classList.add("current_slide");  
         let index = Array.prototype.indexOf.call(nextProduct.parentElement.children, nextProduct);        
-        // console.log(index)
-        if (nextProduct.nodeName === "IMG") {
-            // let currentThumbnail = parseInt(nextProduct.src.charAt(43)) - 1;
+                
+        if (nextProduct.nodeName === "IMG") {            
             for (let slideThumbnail of slideThumbnails) {
                 slideThumbnail.classList.remove("current_slide-thumbnail");
             }      
@@ -79,8 +78,7 @@ prevSlide.addEventListener("click", () => {
         prevProduct.classList.remove("hide"); 
         let index = Array.prototype.indexOf.call(prevProduct.parentElement.children, prevProduct);
 
-        if (prevProduct.nodeName === "IMG") {
-            // let currentThumbnail = parseInt(prevProduct.src.charAt(43)) - 1;
+        if (prevProduct.nodeName === "IMG") {            
             for (let slideThumbnail of slideThumbnails) {
                 slideThumbnail.classList.remove("current_slide-thumbnail");
             }      
