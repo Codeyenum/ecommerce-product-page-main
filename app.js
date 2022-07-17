@@ -46,10 +46,11 @@ let nextSlide = document.querySelector(".next_slide");
 let prevSlide = document.querySelector(".prev_slide");
 
 nextSlide.addEventListener("click", () => {
-    let currentSlide = document.getElementsByClassName("current_slide");
+    let currentSlide = document.querySelector(".product_slide.current_slide");
     let nextProduct = currentSlide.nextElementSibling;
     let productContainer = currentSlide.parentElement;
 
+    console.dir(currentSlide.parentElement)
     if (nextProduct != productContainer.children[5]) {
         currentSlide.classList.add("hide");
         currentSlide.classList.remove("current_slide");
@@ -61,13 +62,13 @@ nextSlide.addEventListener("click", () => {
                 slideThumbnail.classList.remove("current_slide-thumbnail");
             }      
             slideThumbnails[`${currentThumbnail}`].classList.toggle("current_slide-thumbnail")  
-            console.log(currentThumbnail)
+            
         }                    
     }
 })
 
 prevSlide.addEventListener("click", () => {    
-    let currentSlide = document.getElementsByClassName("current_slide");
+    let currentSlide = document.querySelector(".product_slide.current_slide");
     let upperBound = document.querySelector(".close_btn");
     let prevProduct = currentSlide.previousElementSibling;        
 
