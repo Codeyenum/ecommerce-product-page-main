@@ -51,7 +51,7 @@
     </header>
     <main>
         <div class="product_container">
-            <img class="product current_slide" src="./images/image-product-1.jpg" alt="">
+            <img class="product current_img" src="./images/image-product-1.jpg" alt="">
             <img class="product hide" src="./images/image-product-2.jpg" alt="">
             <img class="product hide" src="./images/image-product-3.jpg" alt="">
             <img class="product hide" src="./images/image-product-4.jpg" alt="">
@@ -75,7 +75,7 @@
                 <div class="title_container">
                     <h2>Card</h2>
                 </div>
-                <div class="order-details">
+                <div class="cart_card-content">
                     <div class="cart_content hide">
                         <img class="product_thumbnail" src="./images/image-product-1-thumbnail.jpg" alt="">
                         <div class="order-summary">
@@ -85,12 +85,11 @@
                         <img class="delete_icon empty-cart" src="./images/icon-delete.svg" alt="">
                     </div>
                     <button class="checkout_btn empty-cart hide">Checkout</button>
-                    <p class="empty-text">Your cart is empty</p>
-                    <p class="order-success hide">Your order has been placed</p>
+                    <p class="empty-text">Your cart is empty</p>                    
                 </div>
             </div>
         </div>
-        <article class="store_component">
+        <article class="product_component">
             <h1>Sneaker Company</h1>
             <h2>Fall Limited Edition Sneakers</h2>
             <p>
@@ -102,43 +101,43 @@
                 <p>50%</p>
                 <s>$250.00</s>
             </div>
-            <div class="order">
+            <div class="order-placement_container">
                 <div class="quantity_container">
                     <button class="minus"><img src="./images/icon-minus.svg" alt="minus"></button>
                     <p>0</p>
                     <button class="plus"><img src="./images/icon-plus.svg" alt="plus"></button>
                 </div>
-                <button class="cart_btn">
+                <button class="add-to-cart_btn">
                     <i class="fa-solid fa-cart-shopping"></i>
                     Add to cart
                 </button>
             </div>
         </article>
-        <article class="light-box hide">
-            <div class="product_container-two">
+        <div class="light-box hide">
+            <div class="slideshow_container">
                 <i class="fa-solid fa-xmark close_btn"></i>
-                <img class="product-two current_slide-two" src="./images/image-product-1.jpg" alt="">
-                <img class="product-two hide" src="./images/image-product-2.jpg" alt="">
-                <img class="product-two hide" src="./images/image-product-3.jpg" alt="">
-                <img class="product-two hide" src="./images/image-product-4.jpg" alt="">
-                <button class="prev_btn-two left"><i class="fa-solid fa-angle-left"></i></button>
-                <button class="next_btn-two right"><i class="fa-solid fa-angle-right"></i></button>
-                <div class="thumbnails-two">
-                    <div class="thumbnail-two current_thumbnail-two">
+                <img class="product_slide current_slide" src="./images/image-product-1.jpg" alt="">
+                <img class="product_slide hide" src="./images/image-product-2.jpg" alt="">
+                <img class="product_slide hide" src="./images/image-product-3.jpg" alt="">
+                <img class="product_slide hide" src="./images/image-product-4.jpg" alt="">
+                <button class="prev_slide left"><i class="fa-solid fa-angle-left"></i></button>
+                <button class="next_slide right"><i class="fa-solid fa-angle-right"></i></button>
+                <div class="slide-thumbnails">
+                    <div class="slide-thumbnail current_slide-thumbnail">
                         <img src="./images/image-product-1-thumbnail.jpg" alt="">
                     </div>
-                    <div class="thumbnail-two">
+                    <div class="slide-thumbnail">
                         <img src="./images/image-product-2-thumbnail.jpg" alt="">
                     </div>
-                    <div class="thumbnail-two">
+                    <div class="slide-thumbnail">
                         <img src="./images/image-product-3-thumbnail.jpg" alt="">
                     </div>
-                    <div class="thumbnail-two">
+                    <div class="slide-thumbnail">
                         <img src="./images/image-product-4-thumbnail.jpg" alt="">
                     </div>
                 </div>
             </div>
-        </article>
+        </div>
     </main>
     <div class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.

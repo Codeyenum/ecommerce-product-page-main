@@ -1,37 +1,37 @@
 let cartBtn = document.querySelector(".cart_icon");
 let cartCard = document.querySelector(".cart_card");
-let cartItems = cartBtn.children[0];
+let orderQuantity = cartBtn.children[0];
 let sumTotal = document.querySelector(".sum-total");
 
 cartBtn.addEventListener("click", () => {
     cartCard.classList.toggle("hide");
 })
 
-// let thumbnails = document.querySelectorAll(".thumbnail");
+
 let productImg = document.querySelector(".product");
 let lightBox = document.querySelector(".light-box");
-let lightBoxThumbnails = document.querySelectorAll(".thumbnail-two");
-let productTwoImg = document.querySelectorAll(".product-two");
+let slideThumbnails = document.querySelectorAll(".slide-thumbnail");
+let productSlide = document.querySelectorAll(".product_slide");
 
 
 productImg.addEventListener("click", () => {
     lightBox.classList.remove("hide");
     
-    for (let thumbnailTwo of lightBoxThumbnails) {
-        thumbnailTwo.addEventListener("click", () => {
-            for (let thumbnailTwo of lightBoxThumbnails) {
-                thumbnailTwo.classList.remove("current_thumbnail-two");
+    for (let slideThumbnail of slideThumbnails) {
+        slideThumbnail.addEventListener("click", () => {
+            for (let slideThumbnail of slideThumbnails) {
+                slideThumbnail.classList.remove("current_slide-thumbnail");
             }
-            thumbnailTwo.classList.toggle("current_thumbnail-two");
-            let currentSlide = Array.prototype.indexOf.call(lightBoxThumbnails, thumbnailTwo);
-            for (let productImg of productTwoImg) {
-                productImg.classList.remove("current_slide-two");
-                if (productImg.classList.length < 2 ) {
-                    productImg.classList.add("hide");
+            slideThumbnail.classList.toggle("current_slide-thumbnail");
+            let slideIndex = Array.prototype.indexOf.call(slideThumbnails, slideThumbnail);
+            for (let slide of productSlide) {
+                slide.classList.remove("current_slide");
+                if (slide.classList.length < 2 ) {
+                    slide.classList.add("hide");
                 }                
             }
-            productTwoImg[`${currentSlide}`].classList.toggle("hide")
-            productTwoImg[`${currentSlide}`].classList.toggle("current_slide-two")            
+            productSlide[`${slideIndex}`].classList.toggle("hide")
+            productSlide[`${slideIndex}`].classList.toggle("current_slide")            
         })
     }
 })
@@ -42,71 +42,70 @@ closeBtn.addEventListener("click", () => {
     lightBox.classList.add("hide");
 })
 
-let nextBtnTwo = document.querySelector(".next_btn-two");
-let prevBtnTwo = document.querySelector(".prev_btn-two");
+let nextSlide = document.querySelector(".next_slide");
+let prevSlide = document.querySelector(".prev_slide");
 
-nextBtnTwo.addEventListener("click", () => {
-    let currentProduct = document.querySelector(".current_slide-two");
-    let nextProduct = currentProduct.nextElementSibling;
-    let productContainer = currentProduct.parentElement      
+nextSlide.addEventListener("click", () => {
+    let currentSlide = document.querySelector(".current_slide");
+    let nextProduct = currentSlide.nextElementSibling;
+    let productContainer = currentSlide.parentElement;
 
     if (nextProduct != productContainer.children[5]) {
-        currentProduct.classList.add("hide");
-        currentProduct.classList.remove("current_slide-two");
+        currentSlide.classList.add("hide");
+        currentSlide.classList.remove("current_slide");
         nextProduct.classList.remove("hide");
-        nextProduct.classList.add("current_slide-two");  
+        nextProduct.classList.add("current_slide");  
         if (nextProduct.nodeName === "IMG") {
-            let currentSlide = nextProduct.src.charAt(43) - 1; 
-            for (let thumbnailTwo of lightBoxThumbnails) {
-                thumbnailTwo.classList.remove("current_thumbnail-two");
+            let currentThumbnail = nextProduct.src.charAt(43) - 1; 
+            for (let slideThumbnail of slideThumbnails) {
+                slideThumbnail.classList.remove("current_slide-thumbnail");
             }      
-            lightBoxThumbnails[`${currentSlide}`].classList.toggle("current_thumbnail-two")
+            slideThumbnails[`${currentThumbnail}`].classList.toggle("current_slide-thumbnail")            
         }                    
     }
 })
 
-prevBtnTwo.addEventListener("click", () => {    
-    let currentProduct = document.querySelector(".current_slide-two");
+prevSlide.addEventListener("click", () => {    
+    let currentSlide = document.querySelector(".current_slide");
     let upperBound = document.querySelector(".close_btn");
-    let prevProduct = currentProduct.previousElementSibling;        
+    let prevProduct = currentSlide.previousElementSibling;        
 
     if (prevProduct !== upperBound) {        
-        currentProduct.classList.remove("current_slide-two");  
-        currentProduct.classList.add("hide");      
-        prevProduct.classList.add("current_slide-two");
+        currentSlide.classList.remove("current_slide");  
+        currentSlide.classList.add("hide");      
+        prevProduct.classList.add("current_slide");
         prevProduct.classList.remove("hide"); 
         if (prevProduct.nodeName === "IMG") {
-            let currentSlide = prevProduct.src.charAt(43) - 1; 
-            for (let thumbnailTwo of lightBoxThumbnails) {
-                thumbnailTwo.classList.remove("current_thumbnail-two");
+            let currentThumbnail = prevProduct.src.charAt(43) - 1; 
+            for (let slideThumbnail of slideThumbnails) {
+                slideThumbnail.classList.remove("current_slide-thumbnail");
             }      
-            lightBoxThumbnails[`${currentSlide}`].classList.toggle("current_thumbnail-two")
+            slideThumbnails[`${currentThumbnail}`].classList.toggle("current_slide-thumbnail")
         }
     }
 })
 
 let nextBtn = document.querySelector(".next_btn");
 let prevBtn = document.querySelector(".prev_btn");
+let currentImg = document.querySelector(".current_img");
 
-nextBtn.addEventListener("click", () => {
-    let currentProduct = document.querySelector(".current_slide");
-    let nextProduct = currentProduct.nextElementSibling;
+nextBtn.addEventListener("click", () => {    
+    let nextProduct = currentImg.nextElementSibling;
 
-    if (nextProduct != currentProduct.parentElement.children[4]) {
-        currentProduct.classList.add("hide");
-        currentProduct.classList.remove("current_slide");
+    if (nextProduct != currentImg.parentElement.children[4]) {
+        currentImg.classList.add("hide");
+        currentImg.classList.remove("current_img");
         nextProduct.classList.remove("hide");
-        nextProduct.classList.add("current_slide");
+        nextProduct.classList.add("current_img");
     }
 })
 
-prevBtn.addEventListener("click", () => {
-    let currentProduct = document.querySelector(".current_slide");
-    let prevProduct = currentProduct.previousElementSibling;
+prevBtn.addEventListener("click", () => {    
+    let prevProduct = currentImg.previousElementSibling;
 
     if (prevProduct !== null) {
-        currentProduct.classList.remove("current_slide");
-        prevProduct.classList.add("current_slide");
+        currentImg.classList.remove("current_img");
+        prevProduct.classList.add("current_img");
     }
 })
 
@@ -119,27 +118,27 @@ let quantity = 0;
 add.addEventListener("click", () => {
     quantity++;
     quantityBox.children[1].innerText = quantity;
-    cartItems.innerText = quantity;
+    orderQuantity.innerText = quantity;
 })
 subtract.addEventListener("click", () => {
     if (quantity > 0) {
         quantity--;
     }
     quantityBox.children[1].innerText = quantity;
-    cartItems.innerText = quantity;
+    orderQuantity.innerText = quantity;
 })
 
-let addToCart = document.querySelector(".cart_btn");
+let addToCart = document.querySelector(".add-to-cart_btn");
 
 let checkoutBtn = document.querySelector(".checkout_btn");
 let cartContent = document.querySelector(".cart_content");
-let emptyCartText = document.querySelector(".order-details > p");
+let emptyCartText = document.querySelector(".cart_card-content > p");
 let emptyCartIcons = document.querySelectorAll(".empty-cart");
 
 addToCart.addEventListener("click", () => {
     sumTotal.innerHTML = `$125.00 x ${quantity} <strong>$${125.00 * quantity}.00</strong>`
     if (quantity > 0) {
-        cartItems.classList.toggle("hide");
+        orderQuantity.classList.toggle("hide");
     }
     cartContent.classList.toggle("hide");
     emptyCartText.classList.toggle("hide")
@@ -153,7 +152,7 @@ for (let emptyIcon of emptyCartIcons) {
         emptyCartText.classList.toggle("hide")
         checkoutBtn.classList.toggle("hide");
         quantity = 0;
-        cartItems.classList.toggle("hide");
+        orderQuantity.classList.toggle("hide");
     })
 }
 
