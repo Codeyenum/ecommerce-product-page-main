@@ -155,7 +155,7 @@ for (let emptyIcon of emptyCartIcons) {
 // })
 
 cartCard.addEventListener("mouseleave", () => {
-    cartCard.classList.toggle("hide");
+    cartCard.classList.add("hide");
 })
 
 
