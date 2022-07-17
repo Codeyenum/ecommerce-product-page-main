@@ -9,42 +9,93 @@ cartBtn.addEventListener("click", () => {
 
 let thumbnails = document.querySelectorAll(".thumbnail");
 let productImg = document.querySelector(".product");
+let lightBox = document.querySelector(".light-box");
+let lightBoxThumbnails = document.querySelectorAll(".thumbnail-two");
+let productTwoImg = document.querySelector(".product-two");
 
-for (let thumbnail of thumbnails) {
-    thumbnail.addEventListener("click", () => {        
-        for (let thumbnail of thumbnails) {            
-            thumbnail.classList.remove("current_thumbnail");             
-        }
-        thumbnail.classList.toggle("current_thumbnail"); 
-        let currentSlide = Array.prototype.indexOf.call(thumbnails, thumbnail);                
-        productImg.src = `./images/image-product-${currentSlide + 1}.jpg`
-    })
-}
+
+productImg.addEventListener("click", () => {
+    lightBox.classList.remove("hide");
+    for (let thumbnail of thumbnails) {
+        thumbnail.addEventListener("click", () => {        
+            for (let thumbnail of thumbnails) {            
+                thumbnail.classList.remove("current_thumbnail");             
+            }
+            thumbnail.classList.toggle("current_thumbnail"); 
+            let currentSlide = Array.prototype.indexOf.call(thumbnails, thumbnail);                
+            productTwoImg.src = `./images/image-product-${currentSlide + 1}.jpg`
+        })
+    }
+    for (let thumbnailTwo of lightBoxThumbnails) {
+        thumbnailTwo.addEventListener("click", () => {
+            for (let thumbnailTwo of lightBoxThumbnails) {
+                thumbnailTwo.classList.remove("current_thumbnail-two");
+            }
+            thumbnailTwo.classList.toggle("current_thumbnail-two");
+            let currentSlide = Array.prototype.indexOf.call(lightBoxThumbnails, thumbnailTwo);
+            productTwoImg.src = `./images/image-product-${currentSlide + 1}.jpg`
+        })
+    }
+})
+
+let closeBtn = document.querySelector(".close_btn");
+
+closeBtn.addEventListener("click", () => {
+    lightBox.classList.add("hide");
+})
+
+let nextBtnTwo = document.querySelector(".next_btn-two");
+let prevBtnTwo = document.querySelector(".prev_btn-two");
+
+nextBtnTwo.addEventListener("click", () => {
+    let currentProduct = document.querySelector(".current_slide-two");
+    let nextProduct = currentProduct.nextElementSibling;
+
+    if (nextProduct != currentProduct.parentElement.children[5]) {
+        currentProduct.classList.add("hide");
+        currentProduct.classList.remove("current_slide-two");
+        nextProduct.classList.remove("hide");
+        nextProduct.classList.add("current_slide-two");
+    }
+})
+
+prevBtnTwo.addEventListener("click", () => {    
+    let currentProduct = document.querySelector(".current_slide-two");
+    let upperBound = document.querySelector(".close_btn");
+    let prevProduct = currentProduct.previousElementSibling;
+
+    if (prevProduct !== upperBound) {        
+        currentProduct.classList.remove("current_slide-two");  
+        currentProduct.classList.add("hide");      
+        prevProduct.classList.add("current_slide-two");
+        prevProduct.classList.remove("hide");      
+    }
+})
 
 let nextBtn = document.querySelector(".next_btn");
 let prevBtn = document.querySelector(".prev_btn");
 
-nextBtn.addEventListener("click", () => {  
-    let currentProduct = document.querySelector(".current_slide");      
-    let nextProduct = currentProduct.nextElementSibling;    
+nextBtn.addEventListener("click", () => {
+    let currentProduct = document.querySelector(".current_slide");
+    let nextProduct = currentProduct.nextElementSibling;
 
-    if (nextProduct != currentProduct.parentElement.children[4] ) {                
-        currentProduct.classList.add("hide");               
-        currentProduct.classList.remove("current_slide");    
-        nextProduct.classList.remove("hide");        
+    if (nextProduct != currentProduct.parentElement.children[4]) {
+        currentProduct.classList.add("hide");
+        currentProduct.classList.remove("current_slide");
+        nextProduct.classList.remove("hide");
         nextProduct.classList.add("current_slide");
     }
 
 })
 
-prevBtn.addEventListener("click", () => {  
-    let currentProduct = document.querySelector(".current_slide");      
-    let prevProduct = currentProduct.previousElementSibling;   
-    
-    if (prevProduct !== null) {                 
-        currentProduct.classList.remove("current_slide");                    
-        prevProduct.classList.add("current_slide");                
-    } 
+prevBtn.addEventListener("click", () => {
+    let currentProduct = document.querySelector(".current_slide");
+    let prevProduct = currentProduct.previousElementSibling;
+
+    if (prevProduct !== null) {
+        currentProduct.classList.remove("current_slide");
+        prevProduct.classList.add("current_slide");
+    }
 })
 
 
@@ -54,16 +105,16 @@ let quantityBox = document.querySelector(".quantity_container");
 let quantity = 0;
 
 add.addEventListener("click", () => {
-    quantity ++;    
+    quantity++;
     quantityBox.children[1].innerText = quantity;
-    cartItems.innerText = quantity;    
+    cartItems.innerText = quantity;
 })
 subtract.addEventListener("click", () => {
     if (quantity > 0) {
-        quantity --;
+        quantity--;
     }
     quantityBox.children[1].innerText = quantity;
-    cartItems.innerText = quantity; 
+    cartItems.innerText = quantity;
 })
 
 let addToCart = document.querySelector(".cart_btn");
@@ -77,20 +128,20 @@ addToCart.addEventListener("click", () => {
     sumTotal.innerHTML = `$125.00 x ${quantity} <strong>$${125.00 * quantity}.00</strong>`
     if (quantity > 0) {
         cartItems.classList.toggle("hide");
-    }   
-    cartContent.classList.toggle("hide");         
-    emptyCartText.classList.toggle("hide") 
+    }
+    cartContent.classList.toggle("hide");
+    emptyCartText.classList.toggle("hide")
     checkoutBtn.classList.toggle("hide");
 })
 
 for (let emptyIcon of emptyCartIcons) {
     emptyIcon.addEventListener("click", () => {
         quantityBox.children[1].innerText = 0;
-        cartContent.classList.toggle("hide");        
-        emptyCartText.classList.toggle("hide")    
+        cartContent.classList.toggle("hide");
+        emptyCartText.classList.toggle("hide")
         checkoutBtn.classList.toggle("hide");
         quantity = 0;
-        cartItems.classList.toggle("hide");   
+        cartItems.classList.toggle("hide");
     })
 }
 
