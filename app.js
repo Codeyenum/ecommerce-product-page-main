@@ -55,12 +55,14 @@ nextSlide.addEventListener("click", () => {
         currentSlide.classList.remove("current_slide");
         nextProduct.classList.remove("hide");
         nextProduct.classList.add("current_slide");  
+        let index = Array.prototype.indexOf.call(nextProduct.parentElement.children, nextProduct);        
+        // console.log(index)
         if (nextProduct.nodeName === "IMG") {
-            let currentThumbnail = parseInt(nextProduct.src.charAt(43)) - 1;
+            // let currentThumbnail = parseInt(nextProduct.src.charAt(43)) - 1;
             for (let slideThumbnail of slideThumbnails) {
                 slideThumbnail.classList.remove("current_slide-thumbnail");
             }      
-            slideThumbnails[`${currentThumbnail}`].classList.toggle("current_slide-thumbnail");            
+            slideThumbnails[`${index - 1}`].classList.toggle("current_slide-thumbnail");            
         }                    
     }
 })
@@ -75,12 +77,14 @@ prevSlide.addEventListener("click", () => {
         currentSlide.classList.add("hide");      
         prevProduct.classList.add("current_slide");
         prevProduct.classList.remove("hide"); 
+        let index = Array.prototype.indexOf.call(prevProduct.parentElement.children, prevProduct);
+
         if (prevProduct.nodeName === "IMG") {
-            let currentThumbnail = parseInt(prevProduct.src.charAt(43)) - 1;
+            // let currentThumbnail = parseInt(prevProduct.src.charAt(43)) - 1;
             for (let slideThumbnail of slideThumbnails) {
                 slideThumbnail.classList.remove("current_slide-thumbnail");
             }      
-            slideThumbnails[currentThumbnail].classList.toggle("current_slide-thumbnail")            
+            slideThumbnails[`${index - 1}`].classList.toggle("current_slide-thumbnail")            
         }
     }
 })
