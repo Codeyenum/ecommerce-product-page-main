@@ -287,6 +287,11 @@ header {
     width: 14px;
 }
 
+.delete_icon:hover {
+    height: 18px;
+    width: 15px;  
+}
+
 .checkout_btn {
     background-color: var(--Orange);
     border: none;
@@ -411,6 +416,24 @@ header {
     display: none;
 }
 
+@media screen and (min-width: 620px) and (max-width: 1019px) {
+    
+    .product_container {
+        background-color: hsl(220, 14%, 75%);
+    }
+    
+    .product {
+        object-fit: contain;
+    }
+    
+    .cart_card {
+        box-shadow: 1px 10px 20px hsl(220deg 14% 75%);        
+        height: 320px;
+        max-height: unset;
+        top: 70%;
+    }
+}
+
 @media screen and (min-width: 1020px) {
 
     body {
@@ -420,8 +443,7 @@ header {
 
     header {
         align-items: center;
-        border-bottom: 1px solid var(--grayishBlue);
-        /* padding: 1.25rem 0; */
+        border-bottom: 1px solid var(--grayishBlue);        
         margin: 0;
     }
 
