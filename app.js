@@ -122,8 +122,9 @@ prevBtn.addEventListener("click", () => {
     let prevProduct = currentImg.previousElementSibling;
 
     if (prevProduct !== null) {
+        currentImg.classList.add("hide");
         currentImg.classList.remove("current_img");
-        prevProduct.classList.add("current_img");
+        prevProduct.classList.add("current_img");        
     }
 })
 
