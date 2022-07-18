@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Frontend Mentor - E-commerce product page solution](https://www.frontendmentor.io/solutions/ecommerce-product-page-jB8Qj17sGQ)
 - Live Site URL: [E-commerce product page](https://codeyenum.github.io/ecommerce-product-page-main/)
 
 ## My process

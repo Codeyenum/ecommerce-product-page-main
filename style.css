@@ -423,7 +423,6 @@ main {
     display: none;
 }
 
-
 .attribution {
     font-size: 11px;
     font-weight: 700;
@@ -461,7 +460,7 @@ main {
 
     body {
         padding: 0 8rem;
-        max-height: 100vh;
+        height: 100vh;
     }
 
     header {
