@@ -428,9 +428,9 @@ header {
     
     .cart_card {
         box-shadow: 1px 10px 20px hsl(220deg 14% 75%);        
-        height: 320px;
+        height: 260px;
         max-height: unset;
-        top: 70%;
+        top: 80%;
     }
 }
 
