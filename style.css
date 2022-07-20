@@ -219,19 +219,26 @@ main {
     display: none;
 }
 
+.cart_card.hide {
+    display: block;    
+    top: -100%;     
+    transition: 1s ease-in;    
+}
+
 .cart_card {
     background-color: var(--lightGrayishBlue);
     border-radius: 10px;
     padding: 0 1.5rem;
-    height: 85%;
-    max-height: 275px;
+    /* height: 85%; */
+    /* max-height: 275px; */
     width: 96.5%;
     max-width: 700px;
 
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -55%);
+    transform: translate(-50%, -55%) scale(1);
+    transition: 1s ease-out;
     z-index: 3;
 }
 
@@ -452,7 +459,7 @@ main {
         box-shadow: 1px 10px 20px hsl(220deg 14% 75%);
         height: 260px;
         max-height: unset;
-        top: 80%;
+        top: 70%;        
     }
 }
 
@@ -568,7 +575,7 @@ main {
     .cart_card {
         box-shadow: 1px 10px 20px hsl(220, 14%, 75%);
         position: absolute;
-        top: 32%;
+        top: 31%;
         left: 81.5%;
         width: 320px;
         max-height: 250px;
@@ -646,7 +653,7 @@ main {
 
     .light-box {
         background-color: hsla(0, 0%, 0%, 0.75);
-        display: flex;
+        display: block;
         height: 100vh;
         margin: 0;
         max-height: 100vh;
@@ -656,17 +663,26 @@ main {
         position: absolute;
         top: 0;
         left: 0;
+        transition: 1.75s ease-in-out;
         z-index: 10;
+    }
+
+    .light-box.hide {
+        display: block;
+        position: absolute;
+        left: -100%;        
     }
 
     .slideshow_container {
         display: flex;
         flex-direction: column;
+        justify-content: space-around;
         align-items: flex-end;
 
         position: relative;
         margin: .5rem auto;
-        max-height: 100vh;
+        height: 100%;
+        max-height: 95vh;
         max-width: 37.5vw;
         width: 32.5vw;
     }
