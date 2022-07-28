@@ -229,8 +229,8 @@ main {
     background-color: var(--lightGrayishBlue);
     border-radius: 10px;
     padding: 0 1.5rem;
-    /* height: 85%; */
-    /* max-height: 275px; */
+    height: 85%;
+    max-height: 275px;
     width: 96.5%;
     max-width: 700px;
 
