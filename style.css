@@ -468,12 +468,14 @@ main {
     body {
         padding: 0 8rem;
         height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
 
     header {
         align-items: center;
         border-bottom: 1px solid var(--grayishBlue);
-        margin: 0;
+        margin: 0;        
     }
 
     .logo_img {
@@ -525,6 +527,7 @@ main {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        height: 100%;
     }
 
     .product_container {
@@ -724,7 +727,7 @@ main {
         width: 32px;
 
         position: absolute;
-        top: calc(2.5rem + 30vh);
+        top: calc(50vh - 10%);
         transform: translateY(-50%);
         z-index: 20;
     }
